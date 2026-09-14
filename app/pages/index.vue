@@ -3,5 +3,6 @@ definePageMeta({
   layout: false,
 });
 
-await navigateTo("/cases", { replace: true });
+const { user } = useAuth();
+await navigateTo(user.value ? "/cases" : "/login", { replace: true });
 </script>

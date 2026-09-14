@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { user, signOut } = useAuth();
+</script>
+
 <template>
   <div class="frame">
     <header class="header">
@@ -5,7 +9,10 @@
         <NuxtLink to="/cases">Broker</NuxtLink>
       </p>
       <div class="tools">
-        <p class="email">signed in</p>
+        <p class="email">{{ user?.email }}</p>
+        <AppButton variant="secondary" type="button" @click="signOut">
+          Sign out
+        </AppButton>
       </div>
     </header>
     <nav class="nav" aria-label="Main">

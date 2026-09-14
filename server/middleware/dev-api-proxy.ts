@@ -1,20 +1,21 @@
 /**
  * Dev only: same-origin /auth, /cases, /hubs → local APIs.
- * Skip when the browser is loading a page (Accept: text/html) so /cases
- * is the Nuxt route, not Origination.
+ * Skip HTML only for /cases so those URLs are Nuxt pages, not Origination.
+ * /auth/login and /auth/logout MUST stay proxied (full browser navigation).
  */
 export default defineEventHandler((event) => {
   if (!import.meta.dev) {
     return;
   }
 
-  const accept = getHeader(event, "accept") ?? "";
-  if (accept.includes("text/html")) {
-    return;
-  }
-
   const url = getRequestURL(event);
   const path = url.pathname;
+  const accept = getHeader(event, "accept") ?? "";
+  const isHtml = accept.includes("text/html");
+
+  if (isHtml && (path === "/cases" || path.startsWith("/cases/"))) {
+    return;
+  }
 
   const origins: Record<string, string> = {
     "/auth": "http://localhost:5250",
