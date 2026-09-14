@@ -3,5 +3,5 @@ definePageMeta({
   layout: false,
 });
 
-await navigateTo("/cases", { replace: true });
+await navigateTo("/not-found", { replace: true });
 </script>

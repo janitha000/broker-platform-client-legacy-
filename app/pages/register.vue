@@ -5,9 +5,9 @@ definePageMeta({
 </script>
 
 <template>
-  <h1>Sign in</h1>
+  <h1>Register brokerage</h1>
   <p>
-    New brokerage?
-    <NuxtLink to="/register">Register</NuxtLink>
+    Already have an account?
+    <NuxtLink to="/login">Sign in</NuxtLink>
   </p>
 </template>

@@ -10,7 +10,7 @@
     </header>
     <nav class="nav" aria-label="Main">
       <NuxtLink to="/cases" exact-active-class="current">Cases</NuxtLink>
-      <NuxtLink to="/cases/board" active-class="current">Board</NuxtLink>
+      <NuxtLink to="/cases/board" exact-active-class="current">Board</NuxtLink>
     </nav>
     <main>
       <slot />

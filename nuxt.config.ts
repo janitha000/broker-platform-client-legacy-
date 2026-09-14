@@ -11,11 +11,7 @@ export default defineNuxtConfig({
       originationApiUrl: "",
     },
   },
-  nitro: {
-    devProxy: {
-      "/auth": { target: "http://localhost:5250", changeOrigin: true },
-      "/cases": { target: "http://localhost:5135", changeOrigin: true },
-      "/hubs": { target: "http://localhost:5290", changeOrigin: true, ws: true },
-    },
-  },
+  // HTML navigations to /cases must hit Nuxt, not Origination.
+  // API fetches (no text/html Accept) are proxied in server/middleware/dev-api-proxy.ts
 });
+
