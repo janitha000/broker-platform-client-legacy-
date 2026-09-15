@@ -1,3 +1,5 @@
+@import "./tokens.css";
+
 *,
 *::before,
 *::after {
@@ -9,14 +11,14 @@ body {
   margin: 0;
   min-height: 100%;
   font-family: system-ui, sans-serif;
-  color: #0f172a;
-  background: #f8fafc;
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
 a {
-  color: #1f6b4a;
+  color: var(--color-accent);
 }
 
 a:hover {
-  color: #18553b;
+  color: var(--color-accent-hover);
 }

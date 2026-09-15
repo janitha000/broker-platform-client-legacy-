@@ -2,6 +2,7 @@
   <div class="frame">
     <header class="header">
       <p class="brand">Broker</p>
+      <ThemeToggle />
     </header>
     <main>
       <slot />

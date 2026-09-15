@@ -29,14 +29,14 @@ withDefaults(
 .primary {
   margin-top: 0.5rem;
   padding: 0.75rem 1rem;
-  color: #fff;
-  background: #1f6b4a;
-  border: 1px solid #1f6b4a;
+  color: var(--color-on-accent);
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
 }
 .secondary {
   padding: 0.5rem 1rem;
-  color: #111827;
-  background: #f7f8fa;
-  border: 1px solid #e5e7eb;
+  color: var(--color-heading);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
 }
 </style>

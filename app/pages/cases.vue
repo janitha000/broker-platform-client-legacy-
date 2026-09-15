@@ -27,6 +27,6 @@ definePageMeta({
 }
 
 .nav :deep(a.current) {
-  color: #1f6b4a;
+  color: var(--color-accent);
 }
 </style>

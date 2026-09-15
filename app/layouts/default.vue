@@ -10,6 +10,7 @@ const { user, signOut } = useAuth();
       </p>
       <div class="tools">
         <p class="email">{{ user?.email }}</p>
+        <ThemeToggle />
         <AppButton variant="secondary" type="button" @click="signOut">
           Sign out
         </AppButton>
@@ -59,6 +60,6 @@ const { user, signOut } = useAuth();
 .email {
   margin: 0;
   font-size: var(--font-size-sm, 0.875rem);
-  color: #6b7280;
+  color: var(--color-muted);
 }
 </style>

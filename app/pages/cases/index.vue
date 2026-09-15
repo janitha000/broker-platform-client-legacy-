@@ -144,7 +144,7 @@ label {
 .updating {
   font-size: 0.875rem;
   font-weight: 400;
-  color: #6b7280;
+  color: var(--color-muted);
 }
 .filters {
   display: flex;
@@ -164,12 +164,12 @@ label {
 .filter {
   color: inherit;
   background: transparent;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--color-border);
 }
 .filterCurrent {
-  color: #fff;
-  background: #1f6b4a;
-  border: 1px solid #1f6b4a;
+  color: var(--color-on-accent);
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
 }
 .results {
   margin-top: 2rem;
@@ -189,15 +189,15 @@ label {
   padding: 0.75rem 1rem;
   text-decoration: none;
   color: inherit;
-  background: #f7f8fa;
-  border: 1px solid #e5e7eb;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 0.375rem;
 }
 .item:hover {
-  border-color: #1f6b4a;
+  border-color: var(--color-accent);
 }
 .status {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: var(--color-muted);
 }
 </style>
