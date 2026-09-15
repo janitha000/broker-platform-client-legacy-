@@ -15,10 +15,6 @@ const { user, signOut } = useAuth();
         </AppButton>
       </div>
     </header>
-    <nav class="nav" aria-label="Main">
-      <NuxtLink to="/cases" exact-active-class="current">Cases</NuxtLink>
-      <NuxtLink to="/cases/board" exact-active-class="current">Board</NuxtLink>
-    </nav>
     <main>
       <slot />
     </main>
@@ -64,20 +60,5 @@ const { user, signOut } = useAuth();
   margin: 0;
   font-size: var(--font-size-sm, 0.875rem);
   color: #6b7280;
-}
-
-.nav {
-  display: flex;
-  gap: var(--space-4, 1rem);
-  margin-bottom: var(--space-5, 1.5rem);
-}
-
-.nav :deep(a) {
-  text-decoration: none;
-  color: inherit;
-}
-
-.nav :deep(a.current) {
-  color: #1f6b4a;
 }
 </style>
