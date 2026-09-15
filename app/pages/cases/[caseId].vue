@@ -80,7 +80,7 @@ async function onCompleteFactFind(event: Event) {
   saving.value = true;
   try {
     await completeFactFind(caseId.value, payload);
-    await refresh();
+    await Promise.all([refreshCaseDetail(caseId.value), refreshCaseList()]);
   } catch (caught) {
     const apiError = toApiError(caught);
     if (apiError?.status === 400) {

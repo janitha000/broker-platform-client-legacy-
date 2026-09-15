@@ -65,7 +65,7 @@ async function onCreate() {
   creating.value = true;
   try {
     const created = await createCase(inquiryNotes.value);
-    await refresh();
+    await refreshCaseList();
     await navigateTo(`/cases/${created.caseId}`);
   } catch (caught) {
     if (!isIgnorableAuthError(caught)) {
