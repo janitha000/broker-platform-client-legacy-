@@ -2,6 +2,7 @@ export type AuthUser = {
   tenantId: string;
   brokerId: string;
   email: string;
+  role?: string;
 };
 
 function identityUrl(): string {

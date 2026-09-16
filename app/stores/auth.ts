@@ -18,6 +18,7 @@ export const useAuthStore = defineStore("auth", () => {
     password: string;
   }) {
     user.value = await registerTenant(input.name, input.email, input.password);
+    beginLogin();
   }
 
   function sessionCleared() {
