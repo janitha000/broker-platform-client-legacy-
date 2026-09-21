@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { refreshCaseDetail, refreshCaseList } from "~/composables/useCases";
+
 const route = useRoute();
 const caseId = computed(() => String(route.params.caseId ?? ""));
+const { canReadAudit } = useAuth();
 
 const { data, pending, error, refresh } = await useCaseDetail(caseId);
 
@@ -176,6 +179,7 @@ async function onCompleteFactFind(event: Event) {
       <dt>Completed</dt>
       <dd>{{ formatDateTime(data.factFind.completedAt) }}</dd>
     </dl>
+    <CaseAuditPanel v-if="canReadAudit" :case-id="data.caseId" />
   </template>
 
   <NuxtLink class="back" to="/cases">All cases</NuxtLink>

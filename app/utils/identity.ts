@@ -3,6 +3,7 @@ export type AuthUser = {
   brokerId: string;
   email: string;
   role?: string;
+  permissions?: string[];
 };
 
 function identityUrl(): string {

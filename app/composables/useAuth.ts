@@ -1,8 +1,12 @@
+import { canReadAudit } from "~/utils/canReadAudit";
+
 const LEGACY_SESSION_KEY = "broker.session";
 
 export function useAuth() {
   const store = useAuthStore();
   const { user, ready } = storeToRefs(store);
+
+  const canReadAuditAccess = computed(() => canReadAudit(user.value));
 
   function forgetLegacySession() {
     localStorage.removeItem(LEGACY_SESSION_KEY);
@@ -16,5 +20,6 @@ export function useAuth() {
     signOut: store.signOut,
     sessionUnauthorized: store.sessionUnauthorized,
     forgetLegacySession,
+    canReadAudit: canReadAuditAccess,
   };
 }

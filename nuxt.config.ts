@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     public: {
       identityApiUrl: "",
       originationApiUrl: "",
+      auditApiUrl: "",
     },
   },
 
