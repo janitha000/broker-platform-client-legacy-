@@ -1,3 +1,20 @@
+/**
+ * Origination API. Types from OpenAPI; cookies via request().
+ */
+import type { components } from "./generated/origination";
+
+export type CaseStatus = components["schemas"]["CaseStatus"];
+export type CaseSummary = components["schemas"]["CreateCaseResult"];
+export type CaseListItem = components["schemas"]["CaseDto"];
+export type CaseList = components["schemas"]["GetCasesResult"];
+export type CaseDetail = components["schemas"]["GetCaseResult"];
+export type FactFind = components["schemas"]["FactFindDto"];
+/** Form body; CaseId is on the route, not the JSON. */
+export type FactFindPayload = Omit<
+  components["schemas"]["CompleteFactFindCommand"],
+  "caseId"
+>;
+
 export const CASE_STATUSES = [
   "Enquiry",
   "FactFindCompleted",
@@ -7,44 +24,7 @@ export const CASE_STATUSES = [
   "FormalApproval",
   "Settled",
   "NotProceeded",
-] as const;
-
-export type CaseStatus = (typeof CASE_STATUSES)[number];
-
-export type FactFind = {
-  objectives: string;
-  income: number;
-  expenses: number;
-  assets: number;
-  debts: number;
-  completedAt: string;
-};
-
-export type CaseSummary = {
-  caseId: string;
-  status: CaseStatus;
-};
-
-export type CaseListItem = CaseSummary & {
-  inquiryNotes: string;
-};
-
-export type CaseList = {
-  cases: CaseListItem[];
-};
-
-export type CaseDetail = CaseSummary & {
-  inquiryNotes: string;
-  factFind: FactFind | null;
-};
-
-export type FactFindPayload = {
-  objectives: string;
-  income: number;
-  expenses: number;
-  assets: number;
-  debts: number;
-};
+] as const satisfies readonly CaseStatus[];
 
 function originationUrl(): string {
   return useRuntimeConfig().public.originationApiUrl as string;

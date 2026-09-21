@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
+    "generate:origination": "openapi-typescript ../client/openapi/origination.json -o app/utils/generated/origination.ts"
   },
   "dependencies": {
     "@pinia/nuxt": "^1.0.2",
@@ -15,5 +17,10 @@
     "pinia": "^4.0.3",
     "vue": "^3.5.42",
     "vue-router": "^5.3.1"
+  },
+  "devDependencies": {
+    "openapi-typescript": "^7.13.0",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.3.11"
   }
 }
